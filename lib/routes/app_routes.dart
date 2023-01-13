@@ -36,11 +36,21 @@ class AppRoutes {
         icon: Icons.list_alt_outlined,
         nameOption: 'List View',
         screen: const ListviewScreen()),
+            MenuOption(
+        route: 'listView Builder',
+        icon: Icons.line_style_outlined,
+        nameOption: 'List View Builder',
+        screen: const ListviewBuilderScreen()),
     MenuOption(
         route: 'listViewSeparated',
         icon: Icons.list_rounded,
         nameOption: 'List View Separated',
         screen: const ListviewSeparatedScreen()),
+            MenuOption(
+        route: 'slider',
+        icon: Icons.sledding_sharp,
+        nameOption: 'Slider / Checks',
+        screen: const SliderScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

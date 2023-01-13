@@ -21,8 +21,31 @@ class AppTheme {
               backgroundColor: AppTheme.primaryColor,
               shape: const StadiumBorder(),
               padding:
-                  const EdgeInsets.symmetric(vertical: 15, horizontal: 40))));
+                  const EdgeInsets.symmetric(vertical: 15, horizontal: 40))),
+      //
+      inputDecorationTheme: const InputDecorationTheme(
+        floatingLabelStyle: TextStyle(color: primaryColor),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: primaryColor
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(10))
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: primaryColor
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(10))
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))
+        ),
 
+      )
+        
+      );
+
+     
   //
   static final ThemeData dark = ThemeData.dark().copyWith(
       primaryColor: Colors.amber,

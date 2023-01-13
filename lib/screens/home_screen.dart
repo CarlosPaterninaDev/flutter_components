@@ -16,23 +16,31 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Components'),
         ),
-        body: ListView.separated(
-            itemBuilder: (context, index) => ListTile(
-                  leading: Icon(menuOptions[index].icon, color: AppTheme.primaryColor),
-                  title: Text(menuOptions[index].nameOption),
-                  onTap: () {
-                    // ignore: todo
-                    /* TODO: Navegation por push, es muy configurable
-                    final route = MaterialPageRoute(
-                        builder: (context) => const ListviewScreen());
-
-                    // pushReplacement destruye el stack de cartas, caso de uso el Login
-                    Navigator.push(context, route); */
-
-                    Navigator.pushNamed(context, menuOptions[index].route);
-                  },
-                ),
-            separatorBuilder: (_, __) => const Divider(),
-            itemCount: menuOptions.length));
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.separated(
+                  itemBuilder: (context, index) => ListTile(
+                        leading: Icon(menuOptions[index].icon, color: AppTheme.primaryColor),
+                        title: Text(menuOptions[index].nameOption),
+                        onTap: () {
+                          // ignore: todo
+                          /* TODO: Navegation por push, es muy configurable
+                          final route = MaterialPageRoute(
+                              builder: (context) => const ListviewScreen());
+            
+                          // pushReplacement destruye el stack de cartas, caso de uso el Login
+                          Navigator.push(context, route); */
+            
+                          Navigator.pushNamed(context, menuOptions[index].route);
+                        },
+                      ),
+                  separatorBuilder: (_, __) => const Divider(),
+                  itemCount: menuOptions.length),
+            ),
+          
+          const AboutListTile(),
+          ],
+        ));
   }
 }
